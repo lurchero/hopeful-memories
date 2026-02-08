@@ -12,7 +12,7 @@ export default function Impact() {
   return (
     <SectionWrapper bg="dark" id="impact">
       <div className="text-center">
-        <SectionLabel text="Our Impact" />
+        <SectionLabel text="Our Impact" align="center" />
 
         <h2 className="mt-6 font-serif font-semibold text-2xl md:text-4xl text-secondary leading-tight">
           The Work in Numbers
@@ -29,15 +29,12 @@ export default function Impact() {
               <p className="font-serif text-4xl md:text-5xl font-semibold text-secondary">
                 {stat.value}
               </p>
-              <p className="mt-2 text-sm text-neutral-400 uppercase tracking-wide">
+              <p className="mt-2 text-sm text-neutral-400 uppercase tracking-[0.15em]">
                 {stat.label}
               </p>
             </div>
           ))}
         </div>
-
-        {/* Accent divider */}
-        <div className="mt-14 mx-auto w-12 h-px bg-accent" />
       </div>
     </SectionWrapper>
   );

@@ -73,6 +73,9 @@ export default function Gallery() {
           />
         ))}
       </div>
+
+      {/* Transition element */}
+      <div className="mt-16 mx-auto w-full max-w-[200px] h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
     </SectionWrapper>
   );
 }

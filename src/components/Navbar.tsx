@@ -28,8 +28,14 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-content flex items-center justify-between px-6 md:px-8 h-16">
-        <a href="#" className="font-serif text-lg font-semibold text-primary">
+      <div className="mx-auto max-w-content flex items-center justify-between px-6 md:px-8 h-20">
+        <a
+          href="#"
+          className={`font-serif text-lg font-semibold transition-colors duration-300 ${
+            scrolled ? "text-primary" : "text-secondary"
+          }`}
+          style={{ textShadow: scrolled ? "none" : "0 1px 3px rgba(0,0,0,0.3)" }}
+        >
           Hopeful Memories
         </a>
 
@@ -39,7 +45,12 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-neutral-600 hover:text-primary transition-colors duration-200"
+              className={`text-sm transition-colors duration-200 ${
+                scrolled
+                  ? "text-neutral-600 hover:text-primary"
+                  : "text-secondary/80 hover:text-secondary"
+              }`}
+              style={scrolled ? undefined : { textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
               {link.label}
             </a>
@@ -60,19 +71,19 @@ export default function Navbar() {
           aria-expanded={menuOpen}
         >
           <span
-            className={`block h-px w-6 bg-primary transition-transform duration-300 ${
-              menuOpen ? "rotate-45 translate-y-[3.5px]" : ""
-            }`}
+            className={`block h-px w-6 transition-all duration-300 ${
+              scrolled ? "bg-primary" : "bg-secondary"
+            } ${menuOpen ? "rotate-45 translate-y-[3.5px]" : ""}`}
           />
           <span
-            className={`block h-px w-6 bg-primary transition-opacity duration-300 ${
-              menuOpen ? "opacity-0" : ""
-            }`}
+            className={`block h-px w-6 transition-all duration-300 ${
+              scrolled ? "bg-primary" : "bg-secondary"
+            } ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-px w-6 bg-primary transition-transform duration-300 ${
-              menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""
-            }`}
+            className={`block h-px w-6 transition-all duration-300 ${
+              scrolled ? "bg-primary" : "bg-secondary"
+            } ${menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`}
           />
         </button>
       </div>

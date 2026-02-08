@@ -6,7 +6,6 @@ import Impact from "../components/Impact";
 import Gallery from "../components/Gallery";
 import GetInvolved from "../components/GetInvolved";
 import Donate from "../components/Donate";
-import EmailSignup from "../components/EmailSignup";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
@@ -14,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <Mission />
         <Programs />
@@ -22,7 +21,6 @@ export default function Home() {
         <Gallery />
         <GetInvolved />
         <Donate />
-        <EmailSignup />
         <ContactForm />
       </main>
       <Footer />

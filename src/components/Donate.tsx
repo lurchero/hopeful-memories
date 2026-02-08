@@ -6,7 +6,7 @@ export default function Donate() {
   return (
     <SectionWrapper bg="warm" id="donate">
       <div className="max-w-[700px] mx-auto text-center">
-        <SectionLabel text="Support the Mission" />
+        <SectionLabel text="Support the Mission" align="center" />
 
         <h2 className="mt-6 font-serif font-semibold text-2xl md:text-4xl text-primary leading-tight">
           Every Gift Creates a Memory
@@ -26,9 +26,6 @@ export default function Donate() {
         <div className="mt-10">
           <Button text="Donate Now" variant="filled" href="#" />
         </div>
-
-        {/* Accent divider */}
-        <div className="mt-12 mx-auto w-12 h-px bg-accent" />
       </div>
     </SectionWrapper>
   );

@@ -37,7 +37,7 @@ function ProgramCard({
   description: string;
 }) {
   return (
-    <div className="border border-warm-200 bg-white p-6 md:p-8">
+    <div className="border border-warm-200 bg-white p-6 md:p-8 last:sm:col-span-2">
       <h3 className="font-sans text-lg font-medium text-primary">{title}</h3>
       <p className="mt-3 text-sm text-neutral-600 leading-relaxed">
         {description}
@@ -60,7 +60,7 @@ export default function Programs() {
         storytelling that sustains both community and craft.
       </p>
 
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {programs.map((program) => (
           <ProgramCard
             key={program.title}

@@ -3,9 +3,9 @@ import SectionWrapper from "./SectionWrapper";
 
 export default function Mission() {
   return (
-    <SectionWrapper bg="light" id="mission">
+    <SectionWrapper bg="warm" id="mission">
       <div className="max-w-[800px] mx-auto text-center">
-        <SectionLabel text="Our Mission" />
+        <SectionLabel text="Our Mission" align="center" />
 
         <h2 className="mt-6 font-serif font-semibold text-2xl md:text-4xl text-primary leading-tight">
           Dignity through storytelling.

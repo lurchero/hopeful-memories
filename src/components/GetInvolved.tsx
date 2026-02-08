@@ -30,7 +30,7 @@ export default function GetInvolved() {
   return (
     <SectionWrapper bg="light" id="get-involved">
       <div className="text-center">
-        <SectionLabel text="Get Involved" />
+        <SectionLabel text="Get Involved" align="center" />
 
         <h2 className="mt-6 font-serif font-semibold text-2xl md:text-4xl text-primary leading-tight">
           Be Part of the Story
@@ -43,7 +43,7 @@ export default function GetInvolved() {
       </div>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {pathways.map((pathway) => (
+        {pathways.map((pathway, i) => (
           <div
             key={pathway.title}
             className="border border-warm-200 bg-white p-6 md:p-8 flex flex-col"
@@ -55,7 +55,11 @@ export default function GetInvolved() {
               {pathway.description}
             </p>
             <div className="mt-6">
-              <Button text={pathway.cta} variant="outline" href={pathway.href} />
+              <Button
+                text={pathway.cta}
+                variant={i === 0 ? "filled" : "outline"}
+                href={pathway.href}
+              />
             </div>
           </div>
         ))}
