@@ -1,23 +1,27 @@
+import Link from "next/link";
+
 const navLinks = [
-  { label: "Mission", href: "#mission" },
-  { label: "Programs", href: "#programs" },
-  { label: "Impact", href: "#impact" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Get Involved", href: "#get-involved" },
-  { label: "Donate", href: "#donate" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Programs", href: "/programs" },
+  { label: "Impact", href: "/impact" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Get Involved", href: "/get-involved" },
+  { label: "Donate", href: "/donate" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-neutral-400 px-6 md:px-8 py-16">
-      <div className="mx-auto max-w-content">
+    <footer className="bg-neutral-900 text-neutral-400 px-6 md:px-8">
+      {/* Colored top border */}
+      <div className="h-0.5 bg-gradient-to-r from-rose-400/40 via-gold-400/40 to-sage-400/40" />
+
+      <div className="mx-auto max-w-content py-16">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand */}
           <div>
-            <p className="font-serif text-lg font-semibold text-secondary">
+            <Link href="/" className="font-serif text-lg font-semibold text-secondary">
               Hopeful Memories
-            </p>
+            </Link>
             <p className="mt-2 text-sm text-neutral-500 max-w-[300px]">
               Capturing memories. Honoring lives. Sustaining the creative
               workforce through dignified storytelling.
@@ -31,13 +35,13 @@ export default function Footer() {
             </p>
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-neutral-400 hover:text-secondary transition-colors duration-200"
+                  className="text-sm text-neutral-400 hover:text-sage-400 transition-colors duration-200"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -50,19 +54,19 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-sm">
               <a
                 href="mailto:info@hopefulmemories.org"
-                className="text-neutral-400 hover:text-secondary transition-colors duration-200"
+                className="text-neutral-400 hover:text-rose-400 transition-colors duration-200"
               >
                 info@hopefulmemories.org
               </a>
               <a
                 href="#"
-                className="text-neutral-400 hover:text-secondary transition-colors duration-200"
+                className="text-neutral-400 hover:text-gold-400 transition-colors duration-200"
               >
                 Instagram
               </a>
               <a
                 href="#"
-                className="text-neutral-400 hover:text-secondary transition-colors duration-200"
+                className="text-neutral-400 hover:text-sky-400 transition-colors duration-200"
               >
                 LinkedIn
               </a>

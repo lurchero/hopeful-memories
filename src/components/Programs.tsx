@@ -1,5 +1,14 @@
 import SectionLabel from "./SectionLabel";
 import SectionWrapper from "./SectionWrapper";
+import ReadMore from "./ReadMore";
+
+const cardColors = [
+  "border-l-rose-400",
+  "border-l-gold-400",
+  "border-l-sage-400",
+  "border-l-sky-400",
+  "border-l-rose-400",
+];
 
 const programs = [
   {
@@ -32,40 +41,48 @@ const programs = [
 function ProgramCard({
   title,
   description,
+  colorClass,
 }: {
   title: string;
   description: string;
+  colorClass: string;
 }) {
   return (
-    <div className="border border-warm-200 bg-white p-6 md:p-8 last:sm:col-span-2">
+    <div className={`border border-warm-200 border-l-4 ${colorClass} bg-white p-6 md:p-8`}>
       <h3 className="font-sans text-lg font-medium text-primary">{title}</h3>
-      <p className="mt-3 text-sm text-neutral-600 leading-relaxed">
-        {description}
-      </p>
+      <ReadMore
+        text={description}
+        className="mt-3 text-sm text-neutral-600 leading-relaxed"
+      />
     </div>
   );
 }
 
-export default function Programs() {
+export default function Programs({ showHeader = true }: { showHeader?: boolean }) {
   return (
     <SectionWrapper bg="warm" id="programs">
-      <SectionLabel text="Our Programs" />
+      {showHeader && (
+        <>
+          <SectionLabel text="Our Programs" />
 
-      <h2 className="mt-6 font-serif font-semibold text-2xl md:text-4xl text-primary leading-tight">
-        What We Do
-      </h2>
+          <h2 className="mt-6 font-serif font-semibold text-2xl md:text-4xl text-primary leading-tight">
+            What We Do
+          </h2>
 
-      <p className="mt-4 text-base text-neutral-600 max-w-[600px] leading-relaxed">
-        Five interconnected programs working toward one goal — dignified
-        storytelling that sustains both community and craft.
-      </p>
+          <p className="mt-4 text-base text-neutral-600 max-w-[600px] leading-relaxed">
+            Five interconnected programs working toward one goal — dignified
+            storytelling that sustains both community and craft.
+          </p>
+        </>
+      )}
 
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {programs.map((program) => (
+      <div className={`${showHeader ? "mt-12" : ""} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6`}>
+        {programs.map((program, i) => (
           <ProgramCard
             key={program.title}
             title={program.title}
             description={program.description}
+            colorClass={cardColors[i]}
           />
         ))}
       </div>

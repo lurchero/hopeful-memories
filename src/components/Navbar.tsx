@@ -1,66 +1,81 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const links = [
-  { label: "Mission", href: "#mission" },
-  { label: "Programs", href: "#programs" },
-  { label: "Impact", href: "#impact" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Get Involved", href: "#get-involved" },
+  { label: "Programs", href: "/programs" },
+  { label: "Impact", href: "/impact" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Get Involved", href: "/get-involved" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const showSolid = scrolled;
+
+  function isActive(href: string) {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  }
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        showSolid
           ? "bg-secondary/95 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-content flex items-center justify-between px-6 md:px-8 h-20">
-        <a
-          href="#"
+        <Link
+          href="/"
           className={`font-serif text-lg font-semibold transition-colors duration-300 ${
-            scrolled ? "text-primary" : "text-secondary"
+            showSolid ? "text-primary" : "text-secondary text-shadow-nav"
           }`}
-          style={{ textShadow: scrolled ? "none" : "0 1px 3px rgba(0,0,0,0.3)" }}
         >
           Hopeful Memories
-        </a>
+        </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm transition-colors duration-200 ${
-                scrolled
-                  ? "text-neutral-600 hover:text-primary"
-                  : "text-secondary/80 hover:text-secondary"
-              }`}
-              style={scrolled ? undefined : { textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#donate"
-            className="bg-accent text-secondary px-5 py-2 text-sm font-medium tracking-wide uppercase hover:bg-accent/90 transition-colors duration-300"
+        <div className="hidden md:flex items-center gap-1">
+          {links.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm px-4 py-2 rounded-full transition-all duration-200 ${
+                  showSolid
+                    ? active
+                      ? "text-accent bg-sage-50 font-medium"
+                      : "text-primary hover:text-accent hover:bg-warm-50"
+                    : active
+                      ? "text-secondary font-semibold text-shadow-nav"
+                      : "text-secondary hover:text-secondary/80 text-shadow-nav"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/donate"
+            className="ml-4 bg-accent text-secondary px-5 py-2 text-sm font-medium tracking-wide uppercase rounded-full hover:bg-rose-400 transition-colors duration-300"
           >
             Donate
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -72,17 +87,17 @@ export default function Navbar() {
         >
           <span
             className={`block h-px w-6 transition-all duration-300 ${
-              scrolled ? "bg-primary" : "bg-secondary"
+              showSolid ? "bg-primary" : "bg-secondary"
             } ${menuOpen ? "rotate-45 translate-y-[3.5px]" : ""}`}
           />
           <span
             className={`block h-px w-6 transition-all duration-300 ${
-              scrolled ? "bg-primary" : "bg-secondary"
+              showSolid ? "bg-primary" : "bg-secondary"
             } ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
             className={`block h-px w-6 transition-all duration-300 ${
-              scrolled ? "bg-primary" : "bg-secondary"
+              showSolid ? "bg-primary" : "bg-secondary"
             } ${menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`}
           />
         </button>
@@ -96,24 +111,31 @@ export default function Navbar() {
             : "opacity-0 max-h-0 overflow-hidden pointer-events-none"
         }`}
       >
-        <div className="px-6 py-6 space-y-4">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block text-sm text-neutral-600 hover:text-primary transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#donate"
-            className="block bg-accent text-secondary text-center px-5 py-3 text-sm font-medium tracking-wide uppercase hover:bg-accent/90 transition-colors"
+        <div className="px-6 py-6 space-y-1">
+          {links.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`block text-sm px-4 py-3 rounded-lg transition-colors ${
+                  active
+                    ? "text-accent bg-sage-50 font-medium"
+                    : "text-neutral-600 hover:text-primary hover:bg-warm-50"
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/donate"
+            className="block bg-accent text-secondary text-center px-5 py-3 text-sm font-medium tracking-wide uppercase rounded-full hover:bg-rose-400 transition-colors mt-3"
             onClick={() => setMenuOpen(false)}
           >
             Donate
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface ButtonProps {
   text: string;
   variant?: "filled" | "outline" | "outline-light" | "ghost";
@@ -25,6 +27,14 @@ export default function Button({
   const className = variants[variant];
 
   if (href) {
+    const isInternal = href.startsWith("/");
+    if (isInternal) {
+      return (
+        <Link href={href} className={`inline-block ${className}`}>
+          {text}
+        </Link>
+      );
+    }
     return (
       <a href={href} className={`inline-block ${className}`}>
         {text}
