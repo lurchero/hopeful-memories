@@ -1,14 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import SectionLabel from "./SectionLabel";
 import SectionWrapper from "./SectionWrapper";
 
 const pieces = [
-  { title: "Untitled I", subject: "Family Portrait", year: "2025", src: "/images/gallery/IMG_3010.jpg", isHero: true, grayscale: false },
-  { title: "Resonance", subject: "Community Event", year: "2024", src: "/images/gallery/IMG_1648.jpg", isHero: false, grayscale: false },
-  { title: "Golden Hour", subject: "Youth Program", year: "2025", src: "/images/gallery/IMG_2828.jpg", isHero: false, grayscale: false },
-  { title: "Still Life No. 3", subject: "Family Portrait", year: "2024", src: "/images/gallery/IMG_3892.jpg", isHero: false, grayscale: false },
-  { title: "Fragments", subject: "Documentary", year: "2025", src: "/images/gallery/IMG_8331.jpg", isHero: false, grayscale: false },
-  { title: "Dusk", subject: "Community Event", year: "2025", src: "/images/gallery/1F4CD5E5-FF82-496E-827A-721F42D20D6B.jpg", isHero: false, grayscale: false },
+  { title: "Untitled I", subject: "Family Portrait", year: "2025", src: "/images/gallery/IMG_3010.jpg", isHero: true },
+  { title: "Resonance", subject: "Community Event", year: "2024", src: "/images/gallery/IMG_1648.jpg", isHero: false },
+  { title: "Golden Hour", subject: "Youth Program", year: "2025", src: "/images/gallery/IMG_2828.jpg", isHero: false },
 ];
 
 function GalleryPiece({
@@ -17,14 +15,12 @@ function GalleryPiece({
   year,
   src,
   isHero = false,
-  grayscale = false,
 }: {
   title: string;
   subject: string;
   year: string;
   src: string;
   isHero?: boolean;
-  grayscale?: boolean;
 }) {
   return (
     <div className={`relative group ${isHero ? 'lg:col-span-2 lg:row-span-2' : ''}`}>
@@ -38,7 +34,7 @@ function GalleryPiece({
             src={src}
             alt={`${title} — ${subject}, ${year}`}
             fill
-            className={`object-cover transition-all duration-500 group-hover:scale-[1.03] ${grayscale ? 'grayscale contrast-110 brightness-105' : ''}`}
+            className="object-cover transition-all duration-500 group-hover:scale-[1.03]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
@@ -75,9 +71,17 @@ export default function Gallery() {
             year={piece.year}
             src={piece.src}
             isHero={piece.isHero}
-            grayscale={piece.grayscale}
           />
         ))}
+      </div>
+
+      <div className="mt-10">
+        <Link
+          href="/gallery"
+          className="text-accent text-sm font-medium underline-offset-4 hover:underline transition-colors duration-300"
+        >
+          View full gallery →
+        </Link>
       </div>
 
       {/* Transition element */}

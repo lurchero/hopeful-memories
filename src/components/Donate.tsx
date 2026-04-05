@@ -24,7 +24,7 @@ export default function Donate() {
         </p>
 
         <div className="mt-10">
-          <Button text="Donate Now" variant="filled" href="#" />
+          <Button text="Donate Now" variant="filled" href="mailto:donate@hopefulmemories.org?subject=Donation%20Inquiry" />
         </div>
       </div>
     </SectionWrapper>

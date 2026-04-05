@@ -20,7 +20,7 @@ const pathways = [
     description:
       "We're always looking for photographers, videographers, and storytellers who want to do meaningful, paid work in their communities.",
     cta: "Apply Now",
-    href: "/get-involved#contact",
+    href: "/get-involved#creative-application",
     image: "/images/IMG_7041.jpg",
   },
   {

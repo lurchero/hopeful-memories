@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "../../components/PageHeader";
 import GetInvolved from "../../components/GetInvolved";
+import CreativeApplicationForm from "../../components/CreativeApplicationForm";
 import ContactForm from "../../components/ContactForm";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function GetInvolvedPage() {
         description="Whether through giving, creating, or partnering — your involvement directly supports dignified storytelling and the people who make it possible."
       />
       <GetInvolved showHeader={false} />
+      <CreativeApplicationForm />
       <ContactForm />
     </>
   );

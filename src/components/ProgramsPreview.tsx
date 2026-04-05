@@ -8,6 +8,7 @@ const cardColors = [
   "border-l-gold-200",
   "border-l-sage-200",
   "border-l-sky-200",
+  "border-l-rose-200",
 ];
 
 const programs = [
@@ -30,6 +31,11 @@ const programs = [
     title: "Community Storytelling",
     description:
       "Public exhibits and documentary projects celebrating community narratives.",
+  },
+  {
+    title: "Corporate Partnerships",
+    description:
+      "Structured partnerships with measurable social impact — connecting organizations to communities through the power of visual storytelling.",
   },
 ];
 

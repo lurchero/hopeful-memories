@@ -2,9 +2,10 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
   { label: "Impact", href: "/impact" },
-  { label: "Gallery", href: "/#gallery" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Get Involved", href: "/get-involved" },
   { label: "Donate", href: "/donate" },
 ];
@@ -57,18 +58,6 @@ export default function Footer() {
                 className="text-neutral-400 hover:text-rose-400 transition-colors duration-200"
               >
                 info@hopefulmemories.org
-              </a>
-              <a
-                href="#"
-                className="text-neutral-400 hover:text-gold-400 transition-colors duration-200"
-              >
-                Instagram
-              </a>
-              <a
-                href="#"
-                className="text-neutral-400 hover:text-sky-400 transition-colors duration-200"
-              >
-                LinkedIn
               </a>
             </div>
           </div>

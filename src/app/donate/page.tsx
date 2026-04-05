@@ -92,7 +92,7 @@ export default function DonatePage() {
             creatives, and communities.
           </p>
           <div className="mt-8">
-            <Button text="Donate Now" variant="filled" href="#" />
+            <Button text="Donate Now" variant="filled" href="mailto:donate@hopefulmemories.org?subject=Donation%20Inquiry" />
           </div>
         </div>
       </SectionWrapper>
@@ -103,7 +103,7 @@ export default function DonatePage() {
           <p className="text-base text-neutral-600 leading-relaxed">
             Hopeful Memories, Inc. is a registered 501(c)(3) nonprofit
             organization. All contributions are tax-deductible to the extent
-            allowed by law. EIN available upon request.
+            allowed by law. EIN: 41-3548102.
           </p>
           <p className="mt-4 text-sm text-neutral-500">
             For questions about giving, contact{" "}
