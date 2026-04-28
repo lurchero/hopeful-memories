@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   title: "Programs — Hopeful Memories",
   description:
     "Explore our programs: free family portraits, paid creative opportunities, youth mentorship, community storytelling, and corporate partnerships.",
+  openGraph: {
+    title: "Programs — Hopeful Memories",
+    description:
+      "Explore our programs: free family portraits, paid creative opportunities, youth mentorship, community storytelling, and corporate partnerships.",
+    images: ["/images/programs/IMG_5560.jpg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Programs — Hopeful Memories",
+    description:
+      "Explore our programs: free family portraits, paid creative opportunities, youth mentorship, community storytelling, and corporate partnerships.",
+    images: ["/images/programs/IMG_5560.jpg"],
+  },
 };
 
 export default function ProgramsPage() {

@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -35,7 +35,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         showSolid
-          ? "bg-secondary/95 backdrop-blur-md shadow-sm"
+          ? "bg-secondary/95 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       }`}
     >

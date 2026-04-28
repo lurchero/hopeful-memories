@@ -59,6 +59,23 @@ export default function Footer() {
               >
                 info@hopefulmemories.org
               </a>
+              {/* TODO: confirm Instagram + Facebook handles with the founder */}
+              <a
+                href="https://www.instagram.com/hopefulmemories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-gold-400 transition-colors duration-200"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/hopefulmemories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-sky-400 transition-colors duration-200"
+              >
+                Facebook
+              </a>
             </div>
           </div>
         </div>

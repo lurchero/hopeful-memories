@@ -16,10 +16,43 @@ const sans = Inter({
   display: "swap",
 });
 
+const SITE_URL = "https://www.hopefulmemories.org";
+const OG_IMAGE = "/images/hero/IMG_1750.jpg";
+const SITE_DESCRIPTION =
+  "Hopeful Memories creates dignified photographic experiences for families and communities while sustaining the creative workforce through meaningful, paid storytelling work.";
+
 export const metadata: Metadata = {
-  title: "Hopeful Memories — Capturing Memories. Honoring Lives.",
-  description:
-    "Hopeful Memories creates dignified photographic experiences for families and communities while sustaining the creative workforce through meaningful, paid storytelling work.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Hopeful Memories — Capturing Memories. Honoring Lives.",
+    template: "%s — Hopeful Memories",
+  },
+  description: SITE_DESCRIPTION,
+  icons: {
+    icon: "/favicon.svg",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Hopeful Memories",
+    title: "Hopeful Memories — Capturing Memories. Honoring Lives.",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    locale: "en_US",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Hopeful Memories — dignified photography for families and communities",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hopeful Memories — Capturing Memories. Honoring Lives.",
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export default function RootLayout({

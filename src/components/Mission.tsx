@@ -40,7 +40,7 @@ export default function Mission() {
             <div
               key={photo.src}
               className={`relative aspect-[4/5] overflow-hidden transition-all duration-300 ${
-                photo.dominant ? 'scale-105 z-10 shadow-lg' : 'hover:scale-102'
+                photo.dominant ? 'scale-105 z-10 shadow-lg' : 'hover:scale-[1.02]'
               }`}
             >
               <Image

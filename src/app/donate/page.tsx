@@ -9,6 +9,20 @@ export const metadata: Metadata = {
   title: "Donate — Hopeful Memories",
   description:
     "Support Hopeful Memories with a tax-deductible donation. Every gift funds free portrait sessions, pays creative professionals, and builds community programs.",
+  openGraph: {
+    title: "Donate — Hopeful Memories",
+    description:
+      "Support Hopeful Memories with a tax-deductible donation. Every gift funds free portrait sessions, pays creative professionals, and builds community programs.",
+    images: ["/images/donate/IMG_1747.jpg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Donate — Hopeful Memories",
+    description:
+      "Support Hopeful Memories with a tax-deductible donation. Every gift funds free portrait sessions, pays creative professionals, and builds community programs.",
+    images: ["/images/donate/IMG_1747.jpg"],
+  },
 };
 
 const givingLevels = [
