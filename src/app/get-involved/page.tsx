@@ -5,7 +5,7 @@ import CreativeApplicationForm from "../../components/CreativeApplicationForm";
 import ContactForm from "../../components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Get Involved — Hopeful Memories",
+  title: "Get Involved",
   description:
     "Donate, apply as a creative, or become a partner. There are many ways to support Hopeful Memories and the communities we serve.",
 };

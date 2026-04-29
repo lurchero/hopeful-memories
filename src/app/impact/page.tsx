@@ -5,7 +5,7 @@ import SectionWrapper from "../../components/SectionWrapper";
 import SectionLabel from "../../components/SectionLabel";
 
 export const metadata: Metadata = {
-  title: "Impact — Hopeful Memories",
+  title: "Impact",
   description:
     "See the measurable impact of Hopeful Memories: families served, photographers paid, community events, and partner organizations.",
 };

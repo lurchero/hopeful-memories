@@ -4,7 +4,7 @@ import PageHeader from "../../components/PageHeader";
 import SectionWrapper from "../../components/SectionWrapper";
 
 export const metadata: Metadata = {
-  title: "Gallery — Hopeful Memories",
+  title: "Gallery",
   description:
     "A collection of moments captured through Hopeful Memories programs — portraits, community events, and documentary work celebrating everyday life.",
 };

@@ -6,7 +6,7 @@ import SectionLabel from "../../components/SectionLabel";
 import Button from "../../components/Button";
 
 export const metadata: Metadata = {
-  title: "Donate — Hopeful Memories",
+  title: "Donate",
   description:
     "Support Hopeful Memories with a tax-deductible donation. Every gift funds free portrait sessions, pays creative professionals, and builds community programs.",
   openGraph: {

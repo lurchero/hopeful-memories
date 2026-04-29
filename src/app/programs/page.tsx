@@ -7,7 +7,7 @@ import SectionWrapper from "../../components/SectionWrapper";
 import SectionLabel from "../../components/SectionLabel";
 
 export const metadata: Metadata = {
-  title: "Programs — Hopeful Memories",
+  title: "Programs",
   description:
     "Explore our programs: free family portraits, paid creative opportunities, youth mentorship, community storytelling, and corporate partnerships.",
   openGraph: {

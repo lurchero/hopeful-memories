@@ -5,7 +5,7 @@ import SectionWrapper from "../../components/SectionWrapper";
 import SectionLabel from "../../components/SectionLabel";
 
 export const metadata: Metadata = {
-  title: "About — Hopeful Memories",
+  title: "About",
   description:
     "Hopeful Memories is an Atlanta-based nonprofit founded by Deshann Reed, creating dignified photographic experiences for families while sustaining the creative workforce.",
   openGraph: {
